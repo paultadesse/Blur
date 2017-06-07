@@ -33,7 +33,7 @@ public class Softwareengineering {
     
     public static void main(String[] args) throws InterruptedException, Exception {
         
-        // TODO code application logic here
+        // calling facebook method
         facebook();
     }
     
@@ -69,11 +69,13 @@ public class Softwareengineering {
       if (friendListBeforeScrolling.size() == friendListAfterScrolling.size()) {
           System.out.println("--------------------------->> Friends of " + friendName);
           int i =0;
+          //store friends name in the Array
           String[] allF = new String[friendListBeforeScrolling.size()];
           
           for(WebElement name: friendListBeforeScrolling){
              allF[i] =  name.getText();
             System.out.println(i +"."+name.getText());
+              //copy to ecxcel file
               copyToExcel(name.getText(),i,"a");
               i++;
             }
