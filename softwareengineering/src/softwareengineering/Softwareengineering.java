@@ -40,13 +40,19 @@ public class Softwareengineering {
     //-------------------Assignment-----------------------------------
     
     public static void findFriend( String friendName, WebDriver WDname) throws Exception{
+        //goto facebook page
     WDname.navigate().to("https://www.facebook.com");
     WDname.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //writing friend name in the search field
     WDname.findElement(By.xpath(".//*[@name = 'q']")).sendKeys(friendName);
+        //click the search button
     WDname.findElement(By.xpath(".//*[@data-testid='facebar_search_button']")).click();
+        //click the first friend that pop up after search
     WDname.findElement(By.cssSelector("#xt_uniq_2 > div > div._2xjf > a > div")).click();
+        //click his/her firends tab
     WDname.findElement(By.xpath("//*[@data-tab-key='friends']")).click();
-
+        
+    //looping through the friends list
    while(true){
        
           List<WebElement> friendListBeforeScrolling = WDname.findElements(By.xpath("//div[@class='fsl fwb fcb']/a"));
@@ -56,6 +62,7 @@ public class Softwareengineering {
           WebElement lastFriend = friendListBeforeScrolling.get(friendListBeforeScrolling.size()-1);
           int y = lastFriend.getLocation().y;
           JavascriptExecutor js = (JavascriptExecutor)WDname;
+        //scroll to y direction
           js.executeScript("window.scrollTo(0,"+y+")");
           Thread.sleep(4000);
           List<WebElement> friendListAfterScrolling = WDname.findElements(By.xpath("//div[@class='fsl fwb fcb']/a"));
