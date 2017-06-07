@@ -30,7 +30,7 @@ public class friendOfFriends {
     WebDriver WDname = new ChromeDriver();
     WDname.navigate().to("https://www.facebook.com");
     WDname.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    WDname.findElement(By.xpath(".//*[@name = 'q']")).sendKeys("Binyam fantaye");
+    WDname.findElement(By.xpath(".//*[@name = 'q']")).sendKeys("friendName");
     WDname.findElement(By.xpath(".//*[@data-testid='facebar_search_button']")).click();
     WDname.findElement(By.cssSelector("#xt_uniq_2 > div > div._2xjf > a > div")).click();
     WDname.findElement(By.xpath("//*[@data-tab-key='friends']")).click();
