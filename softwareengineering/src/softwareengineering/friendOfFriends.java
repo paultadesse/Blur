@@ -30,9 +30,6 @@ public class friendOfFriends {
     WebDriver WDname = new ChromeDriver();
     WDname.navigate().to("https://www.facebook.com");
     WDname.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    WDname.findElement(By.xpath(".//*[@id = 'email']")).sendKeys("paulosta9@gmial.com");
-    WDname.findElement(By.xpath(".//*[@id = 'pass']")).sendKeys("0911250725");
-    WDname.findElement(By.xpath(".//*[@type='submit']")).click();
     WDname.findElement(By.xpath(".//*[@name = 'q']")).sendKeys("Binyam fantaye");
     WDname.findElement(By.xpath(".//*[@data-testid='facebar_search_button']")).click();
     WDname.findElement(By.cssSelector("#xt_uniq_2 > div > div._2xjf > a > div")).click();
