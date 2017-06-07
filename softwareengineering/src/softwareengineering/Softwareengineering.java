@@ -36,52 +36,6 @@ public class Softwareengineering {
         // TODO code application logic here
         facebook();
     }
-    public static void Caller(){
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-       WebDriver WDname = new ChromeDriver(); 
-       WDname.get("http://localhost/musicstore-system-beta/");
-       System.out.println(WDname.getTitle());
-       System.out.println(WDname.getCurrentUrl());
-//       System.out.println(WDname.getPageSource());
-       
-//       WDname.navigate().to("http://localhost/musicstore-system-beta/login.php");
-//       WDname.navigate().back();
-//       WDname.navigate().forward();
-       WebElement f = WDname.findElement(By.id("featured-description"));
-       f.findElement(By.tagName("p"));
-       System.out.println(f.toString());
-       
-    }
-    public static void method2(){
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-       WebDriver WDname = new ChromeDriver(); 
-       WDname.navigate().to("https://www.yahoo.com");
-       try {
-           Thread.sleep(2000);
-       }catch(Exception e){
-           
-       }
-       WDname.navigate().to("https://www.google.com");
-       WDname.navigate().refresh();
-       WDname.navigate().back();
-       WDname.navigate().forward();
-       WDname.close();
-    }
-    public static void method3(){
-    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-    WebDriver WDname = new ChromeDriver();
-    WDname.navigate().to("https://www.google.com");
-    WebElement search = WDname.findElement(By.name("q"));
-    search.sendKeys("addis ababa university");
-    search.click();
-    try {
-           Thread.sleep(5000);
-       }catch(Exception e){
-           
-       }
-    search.clear();
-    WDname.close();
-    }
     
     //-------------------Assignment-----------------------------------
     
