@@ -40,13 +40,8 @@ public class Softwareengineering {
     //-------------------Assignment-----------------------------------
     
     public static void findFriend( String friendName, WebDriver WDname) throws Exception{
-//    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-//    WebDriver WDname = new ChromeDriver();
     WDname.navigate().to("https://www.facebook.com");
     WDname.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//    WDname.findElement(By.xpath(".//*[@id = 'email']")).sendKeys("user_name");
-//    WDname.findElement(By.xpath(".//*[@id = 'pass']")).sendKeys("password");
-//    WDname.findElement(By.xpath(".//*[@type='submit']")).click();
     WDname.findElement(By.xpath(".//*[@name = 'q']")).sendKeys(friendName);
     WDname.findElement(By.xpath(".//*[@data-testid='facebar_search_button']")).click();
     WDname.findElement(By.cssSelector("#xt_uniq_2 > div > div._2xjf > a > div")).click();
